@@ -15,10 +15,21 @@ if __name__ == '__main__':
 
     ### python3 manage.py runserver react will build react app automatically
     try:
+        src = "build/img/"
+        dst = "build/static/img/"
         if sys.argv[2] == "react":
             project_root = os.getcwd()
-            os.chdir(os.path.join(project_root, "frontend-react"))
+            os.chdir(os.path.join(project_root, "frontend-react/home"))
+            #os.system("npm run build")
+            os.chdir(project_root)
+            os.chdir(os.path.join(project_root, "frontend-react/photography"))
+            #os.system("npm run build")
+            os.chdir(project_root)
+            os.chdir(os.path.join(project_root, "frontend-react/recents"))
             os.system("npm run build")
+            os.mkdir(dst)
+            for f in os.listdir(src):
+                os.rename(src+f, dst+f)
             os.chdir(project_root)
             sys.argv.pop(2)
         execute_from_command_line(sys.argv)

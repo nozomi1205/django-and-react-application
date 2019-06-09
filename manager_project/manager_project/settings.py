@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'task',  #added
     'rest_framework', #added
     'api.apps.ApiConfig', #added
+    'corsheaders' #added
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', #added
 ]
 
 ROOT_URLCONF = 'manager_project.urls'
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'manager_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend-react', 'build')],  ## for react
+        'DIRS': [os.path.join(BASE_DIR, 'frontend-react')],  ## for react
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,5 +128,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "frontend-react", "build", "static"),  #for react
+    os.path.join(BASE_DIR, "frontend-react/home", "build", "static"),
+    os.path.join(BASE_DIR, "frontend-react/photography", "build", "static"),
+    os.path.join(BASE_DIR, "frontend-react/recents", "build", "static")
+)
+
+## ADDED
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+    'http://localhost:10000',
 )

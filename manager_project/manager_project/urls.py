@@ -23,7 +23,9 @@ import task.views as task_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('task_list/', task_view.TaskListView.as_view()),
-    path('react/', TemplateView.as_view(template_name='index.html')),
+    path('home/', TemplateView.as_view(template_name='home/build/index.html')),
+    path('photography/', TemplateView.as_view(template_name='photography/build/index.html')),
+    path('recents/', TemplateView.as_view(template_name='recents/build/index.html')),
     path('api/', include('api.urls')),
     #url(r'^api/customers/$', views.customers_list),
     #url(r'^api/customers/(?P<pk>[0-9]+)$', views.customers_detail),
