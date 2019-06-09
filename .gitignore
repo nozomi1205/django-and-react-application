@@ -1,2 +1,9 @@
+!.gitignore
 memo
 .idea
+./manager_project/frontend-react/home/build/
+./manager_project/frontend-react/home/node_modules/
+./manager_project/frontend-react/photography/build/
+./manager_project/frontend-react/photography/node_modules/
+./manager_project/frontend-react/recents/build/
+./manager_project/frontend-react/recents/node_modules/

@@ -20,10 +20,10 @@ if __name__ == '__main__':
         if sys.argv[2] == "react":
             project_root = os.getcwd()
             os.chdir(os.path.join(project_root, "frontend-react/home"))
-            #os.system("npm run build")
+            os.system("npm run build")
             os.chdir(project_root)
             os.chdir(os.path.join(project_root, "frontend-react/photography"))
-            #os.system("npm run build")
+            os.system("npm run build")
             os.chdir(project_root)
             os.chdir(os.path.join(project_root, "frontend-react/recents"))
             os.system("npm run build")
